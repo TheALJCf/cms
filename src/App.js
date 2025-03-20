@@ -11,7 +11,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div>
+    <div className="flex flex-col grow">
       <Router>
         <Navbar />
         <Routes>

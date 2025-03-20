@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { addUser } from '../services/api';
 
 function Home() {
+  const [name, setName] = useState('');
+
+  const inputOnChange = (e) => {
+    const { value } = e.target;
+    setName(value)
+  }
+
+  const addButtonOnClick = () => {
+    addUser(name)
+  }
+
   return (
     <div className="p-10 text-center flex flex-col grow">
+      <label>Enter Name</label>
+      <input className='border-black border-solid border-[1px] w-36 self-center' name='name' onChange={inputOnChange} value={name}></input>
+      <button onClick={addButtonOnClick}>Submit</button>
       <h1 className="text-4xl font-bold mb-4">Welcome to our church</h1>
       <h2 className="text-2xl mb-6">The Almighty Lord Jesus Christian Fellowship</h2>
       <p className="mb-6">

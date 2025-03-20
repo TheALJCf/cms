@@ -1,7 +1,8 @@
 <?php
-$host = "153.92.15.49"; // Check your Hostinger MySQL host
-$user = "aljcfAdmin";
-$password = "M@sterk3y#";
+// $host = "153.92.15.49"; // for Hostinger
+$host = "152.32.100.170"; // for Localhost
+$user = "u432480574_aljcfAdmin";
+$password = "Aljcf_2233#";
 $database = "u432480574_aljcfcms";
 
 $conn = new mysqli($host, $user, $password, $database);

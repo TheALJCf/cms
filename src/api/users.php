@@ -19,8 +19,10 @@ if ($method === 'GET') {
 } elseif ($method === 'POST') {
     $data = json_decode(file_get_contents("php://input"), true);
     $name = $conn->real_escape_string($data['name']);
+    $user = $conn->real_escape_string($data['name']);
+    $pass = $conn->real_escape_string($data['name']);
 
-    $sql = "INSERT INTO users (name) VALUES ('$name')";
+    $sql = "INSERT INTO users (name, username, password) VALUES ('$name','$user','$pass')";
     if ($conn->query($sql)) {
         echo json_encode(["message" => "User added successfully"]);
     } else {

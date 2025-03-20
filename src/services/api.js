@@ -1,5 +1,5 @@
-const API_URL = "https://lightyellow-crab-322087.hostingersite.com/api/";
-
+// const API_URL = "https://lightyellow-crab-322087.hostingersite.com/api/";
+const API_URL = "http://localhost:3000//api/";
 export async function fetchUsers() {
   const response = await fetch(`${API_URL}users.php`);
   return response.json();
