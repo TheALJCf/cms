@@ -1,0 +1,1 @@
+export const API_URL = "https://lightyellow-crab-322087.hostingersite.com/api/";

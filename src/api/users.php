@@ -1,10 +1,15 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
 include "db.php";
 
-$method = $_SERVER['REQUEST_METHOD'];
+// $method = $_SERVER['REQUEST_METHOD'];
 
 if ($method === 'GET') {
     $sql = "SELECT * FROM users";
@@ -29,6 +34,4 @@ if ($method === 'GET') {
         echo json_encode(["error" => "Failed to add user"]);
     }
 }
-
-$conn->close();
 ?>

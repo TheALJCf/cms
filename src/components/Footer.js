@@ -1,7 +1,8 @@
 function Footer() {
     return (
-      <footer className="bg-gray-800 text-white p-4 text-center mt-10">
-        <p>&copy; 2025 ALJCF. All rights reserved.</p>
+      <footer className="bg-gray-800 text-white p-4 text-center w-full">
+        <p className="text-[14px] text-gray-400">The Almighty Lord Jesus Christian Fellowship.</p>
+        <p className="text-[14px] text-gray-400">&copy; 2025 All rights reserved.</p>
       </footer>
     );
   }

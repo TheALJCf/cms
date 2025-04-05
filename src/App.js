@@ -8,22 +8,26 @@ import Give from "./pages/Give";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./index.css";
+import LoginForm from "./pages/Login";
+import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="flex flex-col grow">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/give" element={<Give />} />
-        </Routes>
-        <Footer />
-      </Router>
+    <div className="relative flex flex-col grow h-full items-center bg-black">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/give" element={<Give />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </Router>
+      <Footer />
     </div>
     
   );
