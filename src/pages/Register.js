@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { register } from "../services/users";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [name, setName] = useState("");
@@ -13,60 +13,66 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    register(name, username, password, email)
-    navigate('/Login');
+    register(name, username, password, email);
+    navigate("/Login");
   };
 
   return (
-    <div className="flex justify-center items-center flex-col grow bg-gray-100">
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-bold text-center mb-4">Registration</h2>
-        {error && <p className="text-red-500 text-center">{error}</p>}
+    <div className="flex grow flex-col items-center justify-center bg-gray-100">
+      <form
+        onSubmit={handleSubmit}
+        className="w-96 rounded-lg bg-white p-6 shadow-lg"
+      >
+        <h2 className="mb-4 text-center text-2xl font-bold">Registration</h2>
+        {error && <p className="text-center text-red-500">{error}</p>}
         <div className="mb-4">
           <label className="block text-gray-700">Name</label>
           <input
-            name='name'
+            name="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Username</label>
           <input
-            name='username'
+            name="username"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Password</label>
           <input
-            name='password'
+            name="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Email</label>
           <input
-            name='email'
+            name="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full rounded-lg border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
             required
           />
         </div>
-        <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+        <button
+          type="submit"
+          className="w-full rounded-lg bg-blue-500 py-2 text-white hover:bg-blue-600"
+        >
           Login
         </button>
       </form>

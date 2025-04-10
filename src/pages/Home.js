@@ -1,52 +1,125 @@
-import React, { useState } from 'react';
-import { addUser } from '../services/api';
-import CustomContainer from '../components/CustomContainer';
-import { HomeContent } from '../resources/contents/TextContents';
+import React from "react";
+import CustomContainer from "../components/CustomContainer";
+import { HomeContent } from "../resources/contents/TextContents";
+import TextField from "../components/forms/TextField";
+import CustomTextArea from "../components/forms/TextArea";
 
 function Home() {
-  const [name, setName] = useState('');
-
   return (
-    <div className=" items-center flex flex-col grow w-full">
-      <div className='absolute w-full h-[600px] overflow-hidden top-0 opacity-45'>
-        <video className='absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2' autoPlay loop muted>
-          <source src={"https://videos.pexels.com/video-files/1893623/1893623-uhd_3840_2160_25fps.mp4"} type='video/mp4' />
+    <div className="flex w-full grow flex-col items-center">
+      <div className="absolute top-0 h-[700px] w-full overflow-hidden opacity-45">
+        <video
+          className="absolute left-1/2 top-1/2 h-auto min-h-full w-auto min-w-full -translate-x-1/2 -translate-y-1/2 transform"
+          autoPlay
+          loop
+          muted
+        >
+          <source src={HomeContent.welcomeBG} type="video/mp4" />
         </video>
       </div>
-      <CustomContainer className={'!h-auto'}>
-        <div className='z-[3] text-white'>
-          <div className='flex flex-col items-end flex-wrap leading-tight pr-[120px] pt-[23px]'>
+      <CustomContainer className={"!h-auto"}>
+        <div className="z-[3] text-white">
+          <div className="flex flex-col flex-wrap items-end pr-[120px] pt-[94px] leading-tight">
             <h1>{HomeContent.welcomeH1}</h1>
             <h2>{HomeContent.welcomeH2}</h2>
             <h3>{HomeContent.welcomeH3}</h3>
             <p className="text-[26px] ">{HomeContent.welcomeDescription}</p>
-            <button className='border-gray-400 border-[3px] rounded-xl bg-green-700 h-[56px] w-[120px] text-[24px] mt-4 hover:bg-green-900 hover:border-gray-100'>{HomeContent.welcomeButtonCaption}</button>
+            <button className="mt-4 h-[56px] w-[120px] rounded-xl border-[3px] border-gray-400 bg-green-700 text-[24px] hover:border-gray-100 hover:bg-green-900">
+              {HomeContent.welcomeButtonCaption}
+            </button>
           </div>
         </div>
       </CustomContainer>
-      <div className='bg-[#181313] w-full h-auto z-[4] flex justify-center mt-16'>
+      <div className="z-[4] mt-16 flex h-auto w-full justify-center bg-[#181313]">
         <CustomContainer>
-          <div className='p-16 text-white'>
-            <p>
-              {HomeContent.churchDescription1}
-            </p> 
-            <h3>{HomeContent.churchTitle2}</h3>
-            <p>
-              {HomeContent.churchDescription2}
-            </p> 
-            <h3>{HomeContent.churchTitle3}</h3>
-            <p>
-              {HomeContent.churchDescription3}
-            </p> 
+          <div className="p-16 text-white">
+            <div className="mb-16 flex justify-between gap-11 text-wrap">
+              <img
+                className="align-middle"
+                src={HomeContent.churchDescriotionImage1}
+                alt="Description 1"
+                width={580}
+              />
+              <div>
+                <p className="text-justify text-[19px] font-normal">
+                  {HomeContent.churchDescription1}
+                </p>
+                <button className=" mt-4 h-[56px] w-[120px] text-[24px] text-green-700 hover:text-green-500">
+                  {HomeContent.churchDescription1ButtonCaption}
+                </button>
+              </div>
+            </div>
+            <div className="mb-16 flex justify-between gap-11 text-wrap">
+              <div>
+                <h3>{HomeContent.churchTitle2}</h3>
+                <p className="text-justify text-[19px] font-normal">
+                  {HomeContent.churchDescription2}
+                </p>
+              </div>
+              <img
+                className="align-middle"
+                src={HomeContent.churchDescriotionImage2}
+                alt="Description 2"
+                width={580}
+              />
+            </div>
+            <div className="flex justify-between gap-11 text-wrap">
+              <img
+                className="align-middle"
+                src={HomeContent.churchDescriotionImage3}
+                alt="Description 3"
+                width={580}
+              />
+              <div>
+                <h3>{HomeContent.churchTitle3}</h3>
+                <p className="text-justify text-[19px] font-normal">
+                  {HomeContent.churchDescription3}
+                </p>
+              </div>
+            </div>
           </div>
         </CustomContainer>
       </div>
-      <div className='bg-[#212020] w-full h-[520px] z-[5] flex justify-center'>
-        <CustomContainer>
-          <div >
-            <p>
-              Welcome to The Almighty Lord Jesus Christian Fellowship, where faith is the foundation, and Christ is our cornerstone. Here, we believe in the power of His love to heal, uplift, and transform. As a community of believers, we strive to walk in His light and share His message with the world. Whether you're seeking spiritual growth, fellowship, or a deeper relationship with Christ, you're invited to join us in worship, prayer, and service. Together, we grow stronger in His love, faith, and truth.
-            </p> \\
+      <div className="z-[4] flex h-auto w-full justify-center bg-[#114d09]">
+        <CustomContainer
+          className={"mt-4 flex flex-col items-center text-white"}
+        >
+          <h2>{HomeContent.contactUsTitle}</h2>
+          <div className="flex h-auto w-full flex-row justify-between p-9">
+            <div className="flex h-[590px] w-[590px] flex-col overflow-scroll bg-white bg-opacity-20">
+              <div className="p-10">
+                <TextField
+                  title={HomeContent.contactUsInputTitle1}
+                  name="test1"
+                  placeholder={HomeContent.contactUsInputPlaceholder1}
+                />
+                <CustomTextArea
+                  title={HomeContent.contactUsInputTitle2}
+                  name="test2"
+                  placeholder={HomeContent.contactUsInputPlaceholder2}
+                />
+                <TextField
+                  title={HomeContent.contactUsInputTitle3}
+                  name="test3"
+                  placeholder={HomeContent.contactUsInputPlaceholder3}
+                />
+              </div>
+            </div>
+            <div>
+              <div className="flex h-[590px] w-[590px] flex-col items-center p-10 ">
+                <h5>YOU MAT VISIT US</h5>
+                <h6>Here's our church location</h6>
+                <h6>135 Don Julio Gregorio, Novaliches Sauyo</h6>
+                <iframe
+                  title="ALJCF Map"
+                  src={HomeContent.contactUSMap}
+                  width="480"
+                  height="350"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
           </div>
         </CustomContainer>
       </div>
