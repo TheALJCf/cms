@@ -1,10 +1,18 @@
 import React from "react";
 import CustomContainer from "../components/CustomContainer";
 import { HomeContent } from "../resources/contents/TextContents";
-import TextField from "../components/forms/TextField";
 import CustomTextArea from "../components/forms/TextArea";
+import TextEdit from "../components/forms/TextEdit";
+import { FaFacebookSquare, FaYoutubeSquare } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const gotoPage = (page) => {
+    navigate("/" + page);
+  };
+
   return (
     <div className="flex w-full grow flex-col items-center">
       <div className="absolute top-0 h-[700px] w-full overflow-hidden opacity-45">
@@ -24,7 +32,10 @@ function Home() {
             <h2>{HomeContent.welcomeH2}</h2>
             <h3>{HomeContent.welcomeH3}</h3>
             <p className="text-[26px] ">{HomeContent.welcomeDescription}</p>
-            <button className="mt-4 h-[56px] w-[120px] rounded-xl border-[3px] border-gray-400 bg-green-700 text-[24px] hover:border-gray-100 hover:bg-green-900">
+            <button
+              className="mt-4 h-[56px] w-[120px] rounded-xl border-[3px] border-gray-400 bg-green-700 text-[24px] hover:border-gray-100 hover:bg-green-900"
+              onClick={() => gotoPage("vision")}
+            >
               {HomeContent.welcomeButtonCaption}
             </button>
           </div>
@@ -44,7 +55,10 @@ function Home() {
                 <p className="text-justify text-[19px] font-normal">
                   {HomeContent.churchDescription1}
                 </p>
-                <button className=" mt-4 h-[56px] w-[120px] text-[24px] text-green-700 hover:text-green-500">
+                <button
+                  className=" mt-4 h-[56px] w-[120px] text-[24px] text-green-700 hover:text-green-500"
+                  onClick={() => gotoPage("events")}
+                >
                   {HomeContent.churchDescription1ButtonCaption}
                 </button>
               </div>
@@ -86,38 +100,67 @@ function Home() {
         >
           <h2>{HomeContent.contactUsTitle}</h2>
           <div className="flex h-auto w-full flex-row justify-between p-9">
-            <div className="flex h-[590px] w-[590px] flex-col overflow-scroll bg-white bg-opacity-20">
+            <div className="flex h-[500px] w-[590px] flex-col overflow-scroll bg-white bg-opacity-20">
               <div className="p-10">
-                <TextField
+                <TextEdit
+                  customClassName="mb-8"
                   title={HomeContent.contactUsInputTitle1}
                   name="test1"
                   placeholder={HomeContent.contactUsInputPlaceholder1}
                 />
                 <CustomTextArea
+                  customClassName="mb-8 !h-[100px]"
                   title={HomeContent.contactUsInputTitle2}
                   name="test2"
                   placeholder={HomeContent.contactUsInputPlaceholder2}
                 />
-                <TextField
+                <TextEdit
+                  customClassName="mb-6"
                   title={HomeContent.contactUsInputTitle3}
                   name="test3"
                   placeholder={HomeContent.contactUsInputPlaceholder3}
                 />
+                <button className="mt-4 h-[56px] w-[120px] rounded-xl border-[3px] border-gray-400 bg-green-700 text-[24px] hover:border-gray-100 hover:bg-green-900">
+                  Submit
+                </button>
               </div>
             </div>
             <div>
-              <div className="flex h-[590px] w-[590px] flex-col items-center p-10 ">
-                <h5>YOU MAT VISIT US</h5>
-                <h6>Here's our church location</h6>
-                <h6>135 Don Julio Gregorio, Novaliches Sauyo</h6>
+              <div className="flex h-[590px] w-[590px] flex-col items-center p-2 ">
+                <h5 className="mb-4">YOU MAT VISIT US</h5>
+                <h6 className="mb-2">Here's our church location</h6>
+                <h6 className="mb-2">
+                  135 Don Julio Gregorio, Novaliches Sauyo
+                </h6>
                 <iframe
                   title="ALJCF Map"
                   src={HomeContent.contactUSMap}
-                  width="480"
-                  height="350"
+                  width="430"
+                  height="300"
                   allowfullscreen
                   loading="lazy"
-                ></iframe>
+                />
+                <div className="mt-2 flex w-full justify-start pl-20">
+                  <h5>Follow us on:</h5>
+                  <div className="flex h-24 w-24 flex-row gap-2 px-7">
+                    <a
+                      href="https://www.facebook.com/TheALJCF"
+                      target="_blank"
+                      title="Go to Facebook page"
+                      rel="noreferrer"
+                    >
+                      <FaFacebookSquare className="h-12 w-12" />
+                    </a>
+                    <a
+                      href="https://www.youtube.com/@thealjcf135"
+                      target="_blank"
+                      title="Go to Youtube page"
+                      rel="noreferrer"
+                    >
+                      <FaYoutubeSquare className="h-12 w-12" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

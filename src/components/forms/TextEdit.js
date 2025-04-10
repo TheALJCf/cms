@@ -1,7 +1,6 @@
-import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const CustomTextArea = (props) => {
+const TextEdit = (props) => {
   const { title, customClassName } = props;
   const defaultClassName = twMerge(
     customClassName,
@@ -11,9 +10,9 @@ const CustomTextArea = (props) => {
   return (
     <div>
       <p>{title}</p>
-      <textarea className={defaultClassName} {...props} />
+      <input className={defaultClassName} {...props} />
     </div>
   );
 };
 
-export default CustomTextArea;
+export default TextEdit;

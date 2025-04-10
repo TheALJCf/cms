@@ -1,6 +1,8 @@
 import description1 from "../images/description 1.jpg";
 import description2 from "../images/description 2.jpg";
 import description3 from "../images/description 3.jpg";
+import fbIcon from "../images/icons/facebook.png";
+import ytIcon from "../images/icons/youtube.png";
 
 export const HomeContent = {
   welcomeH1: "Welcome to our church",
@@ -32,4 +34,6 @@ export const HomeContent = {
   contactUsButtonCaption: "Submit",
   contactUSMap:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.344654995157!2d121.03999604489262!3d14.693091198058392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1005ce87fdf%3A0x94438fc33b8ee135!2sThe%20Almighty%20Lord%20Jesus%20Christian%20Fellowship!5e0!3m2!1sen!2sph!4v1744094540957!5m2!1sen!2sph",
+  followUsFacebookIcon: fbIcon,
+  followUsYoutubeIcon: ytIcon,
 };
