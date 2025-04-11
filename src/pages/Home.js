@@ -5,6 +5,7 @@ import CustomTextArea from "../components/forms/TextArea";
 import TextEdit from "../components/forms/TextEdit";
 import { FaFacebookSquare, FaYoutubeSquare } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import VideoBackground from "../components/content/VideoBackground";
 
 function Home() {
   const navigate = useNavigate();
@@ -15,16 +16,7 @@ function Home() {
 
   return (
     <div className="flex w-full flex-col items-center md:grow">
-      <div className="absolute top-[-60px] h-[700px] w-full overflow-hidden opacity-45 md:top-0">
-        <video
-          className="absolute left-1/2 top-1/2 h-auto w-auto min-w-[1200px] -translate-x-1/2 -translate-y-1/2 transform"
-          autoPlay
-          loop
-          muted
-        >
-          <source src={HomeContent.welcomeBG} type="video/mp4" />
-        </video>
-      </div>
+      <VideoBackground src={HomeContent.welcomeBG} />
       <CustomContainer className={"!h-auto p-6"}>
         <div className="z-[3] text-white">
           <div className="flex flex-col leading-tight md:items-end md:pr-[120px] md:pt-[94px]">

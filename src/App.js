@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import "./index.css";
 import LoginForm from "./pages/Login";
 import Register from "./pages/Register";
+import Vision from "./pages/Vision";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/give" element={<Give />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/vision" element={<Vision />} />
         </Routes>
       </Router>
       <Footer />
