@@ -26,25 +26,25 @@ body {
 }
 
 h1 {
-  @apply font-russoOne text-[84px] font-bold;
+  @apply font-russoOne text-[58px] font-medium md:text-[84px] md:font-bold;
 }
 h2 {
-  @apply font-russoOne text-[72px] font-bold;
+  @apply font-russoOne text-[48px] font-medium md:text-[72px] md:font-bold;
 }
 h3 {
-  @apply font-russoOne text-[48px] font-bold;
+  @apply font-russoOne text-[36px] font-medium md:text-[48px] md:font-bold;
 }
 h4 {
-  @apply font-russoOne text-[36px] font-bold;
+  @apply font-russoOne text-[30px] font-medium md:text-[36px] md:font-bold;
 }
 h5 {
-  @apply font-russoOne text-[28px] font-bold;
+  @apply font-russoOne text-[28px] font-medium md:text-[28px] md:font-bold;
 }
 h6 {
-  @apply font-russoOne text-[14px] font-normal;
+  @apply font-russoOne text-[18px] font-thin md:text-[14px] md:font-normal;
 }
 p {
-  @apply font-merriweather text-[14px] font-thin;
+  @apply font-merriweather text-[16px] font-thin md:text-[14px] md:font-normal;
 }
 
 code {

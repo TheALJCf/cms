@@ -13,23 +13,22 @@ import Register from "./pages/Register";
 
 function App() {
   return (
-    <div className="relative flex flex-col grow h-full items-center bg-black">
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/give" element={<Give />} />
-            <Route path="/login" element={<LoginForm />} />
-            <Route path="/register" element={<Register />} />
-          </Routes>
-        </Router>
+    <div className="relative flex h-full w-full grow flex-col items-center bg-black">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/give" element={<Give />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </Router>
       <Footer />
     </div>
-    
   );
 }
 
