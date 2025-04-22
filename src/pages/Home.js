@@ -1,4 +1,3 @@
-import React from "react";
 import CustomContainer from "../components/CustomContainer";
 import { HomeContent } from "../resources/contents/HomeTextContents";
 import CustomTextArea from "../components/forms/TextArea";
@@ -7,7 +6,7 @@ import { FaFacebookSquare, FaYoutubeSquare } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import VideoBackground from "../components/content/VideoBackground";
 
-function Home() {
+const Home = () => {
   const navigate = useNavigate();
 
   const gotoPage = (page) => {
@@ -92,19 +91,19 @@ function Home() {
             <div className="flex h-[500px] flex-col overflow-scroll bg-white bg-opacity-20 md:w-[590px]">
               <div className="p-10">
                 <TextEdit
-                  customClassName="mb-8"
+                  className="mb-8"
                   title={HomeContent.contactUsInputTitle1}
                   name="test1"
                   placeholder={HomeContent.contactUsInputPlaceholder1}
                 />
                 <CustomTextArea
-                  customClassName="mb-8 !h-[100px]"
+                  className="mb-8 !h-[100px]"
                   title={HomeContent.contactUsInputTitle2}
                   name="test2"
                   placeholder={HomeContent.contactUsInputPlaceholder2}
                 />
                 <TextEdit
-                  customClassName="mb-6"
+                  className="mb-6"
                   title={HomeContent.contactUsInputTitle3}
                   name="test3"
                   placeholder={HomeContent.contactUsInputPlaceholder3}
@@ -156,6 +155,6 @@ function Home() {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

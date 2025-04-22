@@ -11,6 +11,7 @@ import "./index.css";
 import LoginForm from "./pages/Login";
 import Register from "./pages/Register";
 import Vision from "./pages/Vision";
+import ChurchActivities from "./pages/ChurchActivities";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<Register />} />
           <Route path="/vision" element={<Vision />} />
+          <Route path="/activities" element={<ChurchActivities />} />
         </Routes>
       </Router>
       <Footer />

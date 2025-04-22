@@ -12,22 +12,47 @@ function Navbar() {
 
   const onClickHome = async (e) => {
     e.preventDefault();
+    onClickItems();
     navigate("/");
+  };
+
+  const onClickItems = () => {
+    setShowNavBar(false);
+  };
+
+  const onClickNavMenu = () => {
+    setShowNavBar((prev) => !prev);
   };
 
   const NavItem = ({ className }) => {
     return (
       <div className={className}>
-        <Link className="underline-offset-[6px] hover:underline" to="/give">
+        <Link
+          className="underline-offset-[6px] hover:underline"
+          to="/give"
+          onClick={onClickItems}
+        >
           Give
         </Link>
-        <Link className="underline-offset-[6px] hover:underline" to="/services">
+        <Link
+          className="underline-offset-[6px] hover:underline"
+          to="/services"
+          onClick={onClickItems}
+        >
           Services
         </Link>
-        <Link className="underline-offset-[6px] hover:underline" to="/events">
+        <Link
+          className="underline-offset-[6px] hover:underline"
+          to="/events"
+          onClick={onClickItems}
+        >
           Events
         </Link>
-        <Link className="underline-offset-[6px] hover:underline" to="/vision">
+        <Link
+          className="underline-offset-[6px] hover:underline"
+          to="/vision"
+          onClick={onClickItems}
+        >
           Vision
         </Link>
         <div
@@ -61,12 +86,15 @@ function Navbar() {
           >
             {NavList?.map((item, i) => {
               return (
-                <Link
-                  className="underline-offset-[6px] hover:underline"
-                  to={item?.to}
-                >
-                  {item?.title}
-                </Link>
+                <div key={i}>
+                  <Link
+                    className="underline-offset-[6px] hover:underline"
+                    to={item?.to}
+                    onClick={onClickItems}
+                  >
+                    {item?.title}
+                  </Link>
+                </div>
               );
             })}
           </div>
@@ -95,7 +123,7 @@ function Navbar() {
         </div>
         <div
           className="relative z-[11] mx-8 flex cursor-pointer items-center md:hidden"
-          onClick={() => setShowNavBar((prev) => !prev)}
+          onClick={onClickNavMenu}
         >
           <FaBars
             className={`absolute h-[30px] w-[30px] transition-opacity duration-200 ${

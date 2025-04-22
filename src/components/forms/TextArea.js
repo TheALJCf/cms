@@ -1,17 +1,16 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-const CustomTextArea = (props) => {
-  const { title, customClassName } = props;
+const CustomTextArea = ({ title, className, ...rest }) => {
   const defaultClassName = twMerge(
-    customClassName,
-    "w-full overflow-ellipsis p-3 font-thin text-black opacity-30 focus:border-gray-900 focus:outline-none focus:opacity-100",
+    "w-full overflow-ellipsis p-3 font-thin text-black opacity-30 focus:border-gray-900 focus:outline-none focus:opacity-100 ",
+    className,
   );
 
   return (
     <div>
       <p>{title}</p>
-      <textarea className={defaultClassName} {...props} />
+      <textarea className={defaultClassName} {...rest} />
     </div>
   );
 };

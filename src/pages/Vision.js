@@ -14,10 +14,13 @@ const Vision = () => {
         <div className="z-[3] px-6 pt-8 text-white">
           <h1>{VisionTextContent.visionTitle}</h1>
         </div>
-        <div className="z-[4] flex h-fit grow flex-col text-wrap bg-zinc-900 p-10 text-white">
-          {VisionTextContent.descriptionGroup?.map(({ description }) => {
+        <div className="z-[4] flex h-auto grow flex-col text-wrap bg-zinc-900 p-10 text-white">
+          {VisionTextContent.descriptionGroup?.map(({ description }, index) => {
             return (
-              <h6 className="pb-6 text-justify text-[19px] font-normal">
+              <h6
+                key={index}
+                className="pb-6 text-justify text-[19px] font-normal"
+              >
                 {description}
               </h6>
             );
