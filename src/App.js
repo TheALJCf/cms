@@ -12,6 +12,7 @@ import LoginForm from "./pages/Login";
 import Register from "./pages/Register";
 import Vision from "./pages/Vision";
 import ChurchActivities from "./pages/ChurchActivities";
+import MusicTeamSchedules from "./pages/MusicTeamSchedules";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/vision" element={<Vision />} />
           <Route path="/activities" element={<ChurchActivities />} />
+          <Route path="/music-team-schedule" element={<MusicTeamSchedules />} />
         </Routes>
       </Router>
       <Footer />

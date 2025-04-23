@@ -22,14 +22,16 @@ const ChurchActivities = () => {
                   key={index}
                   className={`flex flex-col py-5 ${index < ChurchActivitiesTextContent?.services.length - 1 ? "border-b-2 border-white" : ""}`}
                 >
-                  <h3 className=" text-red-600">{title}</h3>
+                  <h3>{title}</h3>
                   {activities?.map(({ name, subActivities }, innerIndex) => {
                     return (
                       <div
                         className="pl-5 text-white md:pl-10"
                         key={innerIndex}
                       >
-                        <h4 className="py-2 font-thin ">{name}</h4>
+                        <h4 className="py-2 font-thin text-green-600">
+                          {name}
+                        </h4>
                         {subActivities?.map(
                           (subActivitiesItem, SubInnerIndex) => {
                             return (
@@ -63,6 +65,8 @@ const ChurchActivities = () => {
                                 subActivitiesItem?.link !== undefined ? (
                                   <a
                                     href={subActivitiesItem?.link}
+                                    target="_blank"
+                                    rel="noreferrer"
                                     className="order-4 text-[22px] font-extralight text-blue-700 underline md:order-6"
                                   >
                                     Click to Join
